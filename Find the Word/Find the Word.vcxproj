@@ -128,10 +128,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="detector.cpp" />
+    <ClCompile Include="goodW.cpp" />
     <ClCompile Include="mmain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="detector.hpp" />
+    <ClInclude Include="goodW.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

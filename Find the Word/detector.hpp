@@ -1,5 +1,4 @@
 #include <iostream>
 #include <vector>
-#include <list>
 
-void detector(std::vector<std::string> vector);
+void detector(std::vector<std::string> vector, char letterF, char letterL, int sizeF, std::string noL);

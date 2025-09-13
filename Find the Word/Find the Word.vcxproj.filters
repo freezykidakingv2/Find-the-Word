@@ -21,9 +21,15 @@
     <ClCompile Include="detector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="goodW.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="detector.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="goodW.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

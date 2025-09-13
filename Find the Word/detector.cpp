@@ -1,33 +1,58 @@
 #include "detector.hpp"
+#include "goodW.h"
 
-void detector(std::vector<std::string> vector) {
+void detector(std::vector<std::string> vector, char letterF, char letterL, int sizeF, std::string noL) {
 
-	char firstL;
-	char secondL;
-	char thirdL;
-	char forthL;
-	char fifthL;
-	char sixthL;
-
-	std::list<char> letters;
+	std::vector<std::vector<char>> words(vector.size());
 
 	for (int i = 0; i < vector.size(); ++i) {
-
-		for (int j = 0; j <= 5; ++j) {
-			firstL = vector[i][j]; letters.push_back(firstL);
-			if (j == 1 and vector[i].size() >= 2) {  secondL = vector[i][j]; letters.push_back(secondL); }
-			else if (j == 2 and vector[i].size() >= 3) { thirdL = vector[i][j]; letters.push_back(thirdL); }
-			else if (j == 3 and vector[i].size() >= 4) { std::cout << vector[i]; forthL = vector[i][j]; letters.push_back(forthL); }
-			else if (j == 4 and vector[i].size() >= 5) { fifthL = vector[i][j]; letters.push_back(fifthL); }
-			else if (j == 5 and vector[i].size() == 6) { sixthL = vector[i][j]; letters.push_back(sixthL); }
-
-			if (letters.back() == 'e') {
-				std::cout << vector[i];
-				exit(0);
-			}
+		words[i].resize(vector[i].size());
+		for (int j = 0; j < vector[i].size(); ++j) {
+			
+			words[i][j] = vector[i][j];
+			
 		}
 
 	}
 
-	std::cout << letters.size();
+	bool skip = false;
+
+	for (int w = 0; w < words.size(); ++w) {
+		for (int l = 0; l < sizeF; ++l) {
+			if (words[w].back() == letterL and words[w].front() == letterF and words[w].size() == sizeF and check(words[w], noL) == 0) {
+				std::cout << words[w][l];
+			}
+			else {
+				skip = true;
+				break;
+			}
+		}
+		if (skip == true) {
+			continue;
+		}
+	}
 }
+
+//if (words[w].back() == letterL and words[w].front() == letterF) {
+//
+//	if (containsBL == false) {
+//		std::cout << words[w][l];
+//	}
+//	else {
+//		std::cout << "not orange";
+//	}
+//
+//}
+
+//for (char bL : noL) {
+//	if (std::find(words[w].begin(), words[w].end(), bL) != words[w].end()) {
+//		containsBL = true;
+//		continue;
+//	}
+//	else {
+//		containsBL = false;
+//
+//	}
+//}
+
+// bcdfhijklmqpstuvwxyz
